@@ -1,0 +1,39 @@
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="todo"></span>
+        <div class="card rounded-5">
+          <div class="card-header text-center">
+            <h3 class="mb-3">Todo List</h3>
+          </div>
+          <div class="card-body">
+            <form class="form">
+              <div class="form-group">
+                <div class="d-flex">
+                <!-- <input type="text" class="form-control rounded-0" [(ngModel)]="loginUserData.email" name="email" required> -->
+                <input type="text" class="form-control rounded-2 col-md-9" [(ngModel)]="mydata" name="name" placeholder="Enter the Todo Name" required>
+                <button type="button" (click)="tododata()" class="btn btn-primary mx-auto">ADD</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <table class="table mt-4">
+                    <tbody>
+                        <tr *ngFor="let data of todoarray; let i=index;">
+                            <th scope="row" style="font-weight: 400;">{{i+1}}</th>
+                            <!-- <td>{{data._id}}</td> -->
+                            <!-- <td class="{{(!data.isCompleted)? 'done':''}}" (click)= "done(i)">{{data.name}}</td> -->
+                            <td>{{data.name}}</td>
+                            <td>
+                                <button class="btn text-danger  mx-auto" (click)="deletetodo(data._id)">X</button>
+                            </td>
+                        <!-- </tr> -->
+                    </tbody>
+                </table>
+              </div>
+            </form> 
+          </div>
+          <!--/card-block-->
+        </div>
+      </div>
+    </div>
+  </div>
